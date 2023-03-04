@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+{% block title %}Education{% endblock title %}
+{% block BaseHeading %}Education{% endblock BaseHeading %}
+{% block BaseData %}
+{% if allEducation %}
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Institution Name</th>
+          <th scope="col">Relevant Courses</th>
+          <th scope="col">Passout Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in allEducation %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{i.institution_name}}</td>
+          <td>{{i.course}}</td>
+          <td>{{i.passout_date}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% else %}
+<p class="placeholder bg-danger text-light">No Data Exists!!!</p>
+{% endif %}
+{% endblock BaseData %}

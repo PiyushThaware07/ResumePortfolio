@@ -1,0 +1,24 @@
+{% extends 'Base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block BaseHeading %}Contact{% endblock BaseHeading %}
+{% block BaseData %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" placeholder="Name" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+        <input type="text" class="form-control" placeholder="@email.com" aria-describedby="basic-addon1">
+    </div>
+    <div class="form-floating text-dark">
+        <textarea class="form-control" placeholder="Leave A Message" id="floatingTextarea2"
+            style="height: 100px"></textarea>
+        <label for="floatingTextarea2" style="font-size: 14px;">Leave A Message <i class="fa fa-comments-o"
+                aria-hidden="true"></i></label>
+    </div>
+    <button class="btn btn-sm btn-primary mt-3" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+</form>
+{% endblock BaseData %}

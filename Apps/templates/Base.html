@@ -1,0 +1,53 @@
+{% extends 'Index.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card bg-transparent  border border-light border-3 text-light">
+    <!-- ========================
+    Navbar
+    ========================== -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><b>{% block BaseHeading %}{% endblock BaseHeading %}</b></a>
+            <ul class="m-0">
+                <li>
+                    <a href="" class="ms-1"><img src="{% static 'assets/img/facebook.png' %}" alt="" height="28"
+                            width="28"></a>
+                    <a href="" class="ms-1"><img src="{% static 'assets/img/instagram.png' %}" alt="" height="28"
+                            width="28"></a>
+                    <a href="" class="ms-1"><img src="{% static 'assets/img/linkedin.png' %}" alt="" height="28"
+                            width="28"></a>
+                    <a href="" class="ms-1"><img src="{% static 'assets/img/github.png' %}" alt="" height="28"
+                            width="28"></a>
+                    <a href="" class="ms-1"><img src="{% static 'assets/img/mail.png' %}" alt="" height="28"
+                            width="28"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="card-body">
+        {% block BaseData %}{% endblock BaseData %}
+    </div>
+</div>
+
+<section>
+    <div class="float-end my-3">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link {% if request.path == '/about/' %}active {% else %}text-dark{% endif %}" href="{% url 'about' %}" style="font-size:13px;">About</a>
+                </li>
+                <li class="page-item"><a class="page-link {% if request.path == '/education/' %}active {% else %}text-dark{% endif %}" href="{% url 'education' %}" style="font-size:13px;">Education</a>
+                </li>
+                <li class="page-item"><a class="page-link {% if request.path == '/project/' %}active {% else %}text-dark{% endif %}" href="{% url 'project' %}" style="font-size:13px;">Projects</a>
+                </li>
+                <li class="page-item"><a class="page-link text-dark" href="#" style="font-size:13px;">Resume</a></li>
+                <li class="page-item"><a class="page-link {% if request.path == '/contact/' %}active {% else %}text-dark{% endif %}" href="{% url 'contact' %}" style="font-size:13px;">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Home{% endblock title %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .container-fluid .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ==========================
+    MAIN
+    ===============================-->
+  <div class="container-fluid p-0"
+    style="height: 100vh;width: 100vw;background: url({% static 'assets/img/b1.jpg' %}) center no-repeat;background-size:cover;">
+
+
+    <!-- ==========================
+        HEADER
+        ===============================-->
+    <div class="container">
+      {% block content %}
+      <div class="row align-items-center">
+        <div class="col-md-5 text-light">
+          <span id="main" style="font-size: 14px;">______Developer</span>
+          <h1 style="font-size: 50px;text-transform: uppercase;"><b>Piyush Thaware</b></h1>
+          <p class="my-3" style="font-size: 14px;">I’m a passionate full stack web developer from
+            INDIA</p>
+          <a href="{% url 'about' %}"><button class="btn btn-primary" style="border-radius: 0px;">Who Am I ?</button></a>
+        </div>
+      </div>
+      {% endblock content %}
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

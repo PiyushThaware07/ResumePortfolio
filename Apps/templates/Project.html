@@ -1,0 +1,25 @@
+{% extends 'Base.html' %}
+{% block title %}Project{% endblock title %}
+{% block BaseHeading %}Projects{% endblock BaseHeading %}
+{% block BaseData %}
+<div class="row text-dark d-flex justify-content-center">
+    {% if allProject %}
+    {% for i in allProject %}
+    <div class="col-md-4 mt-3 my-md-0">
+        <div class="card" style="height:auto;">
+            <div class="card-body">
+                <div class="card-title py-2 border-bottom border-dark border-1">
+                    <h6 class="card-title"><b>{{i.project_name|truncatechars:50}}</b></h6>
+                </div>
+                <p style="font-size: 13px;">{{ i.start_date|date:"M Y" }} - {{ i.end_date|date:"M Y" }}</p>
+                <p class="card-text" style="font-size: 14px;">{{i.project_description|truncatechars:200}} show more</p>
+                <a href="#" class="btn btn-primary" style="border-radius: 50px;font-size: 12px;">Show Project <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="placeholder bg-danger text-light">No Data Exists!!!</p>
+    {% endif %}
+</div>
+{% endblock BaseData %}
